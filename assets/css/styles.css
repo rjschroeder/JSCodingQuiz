@@ -8,3 +8,23 @@ body {
     justify-content: space-between;
     margin: 25px;
 }
+
+.desc{
+    margin: 25px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.quiz{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.finish{
+    margin: 25px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
