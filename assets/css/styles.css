@@ -1,0 +1,10 @@
+body {
+    font-family: sans-serif;
+    background-color: #f9fbfd;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    margin: 25px;
+}
