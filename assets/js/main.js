@@ -8,4 +8,4 @@ function startQuiz() {
     finishElement.style.display = 'none';
 }
 
-//startButton.onclick = startQuiz();
+startButton.onclick = startQuiz;
