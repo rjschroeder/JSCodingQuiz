@@ -1,27 +1,27 @@
 const questionList = [
     {
-        question: "Do it be?ONE",
-        answers: ["yes", "maybe", "possibly", "no"],
-        correct: "yes"
+        question: "Which is not a valid variable type?",
+        answers: ["let", "const", "var", "perm"],
+        correct: "perm"
     },
     {
-        question: "Do it be?TWO",
-        answers: ["yes", "maybe", "possibly", "no"],
-        correct: "yes"
+        question: "What is a valid method of API call?",
+        answers: ["please", "fetch", "return", "grab"],
+        correct: "fetch"
     },
     {
-        question: "Do it be?THREE",
-        answers: ["yes", "maybe", "possibly", "no"],
-        correct: "yes"
+        question: "What is the body of a function enclosed in?",
+        answers: ["()", "[]", "{}", "<>"],
+        correct: "{}"
     },
     {
-        question: "Do it be?FOUR",
-        answers: ["yes", "maybe", "possibly", "no"],
-        correct: "yes"
+        question: "What is the invalid variable name?",
+        answers: ["one", "1one", "oneone", "ONEone"],
+        correct: "1one"
     },
     {
-        question: "Do it be?FIVE",
-        answers: ["yes", "maybe", "possibly", "no"],
-        correct: "yes"
+        question: "What is the best language?",
+        answers: ["JavaScript", "C++", "C#", "C"],
+        correct: "JavaScript"
     },
 ]
