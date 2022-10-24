@@ -18,14 +18,14 @@ body {
 
 .quiz{
     align-items: center;
-    display: flex;
+    display: none;
     flex-direction: column;
 }
 
 .finish{
     margin: 25px;
     align-items: center;
-    display: flex;
+    display: none;
     flex-direction: column;
 }
 
@@ -34,6 +34,17 @@ body {
     align-items: center;
     display: flex;
     flex-direction: column;
+}
+
+.quiz{
+    margin-top: 120px;
+}
+
+.answerButton{
+    display: block;
+    height: 70px;
+    width: 280px;
+    margin: 5px;
 }
 
 a:link{
