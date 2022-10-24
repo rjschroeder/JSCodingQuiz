@@ -11,9 +11,24 @@ function startQuiz() {
     descriptionElement.style.display = 'none';
     finishElement.style.display = 'none';
 
+    let questionIndex = questionList.length-1;
+
     timerText.textContent = "Time:" + time;
     timer();
+    nextQuestion(questionIndex);
     
+}
+
+function nextQuestion(index){
+    questionText.textContent = questionList[index].question;
+    
+    for(let i = 0; i<questionList[index].answers.length; i++){
+        let answerContainer = document.createElement('button');
+        answerContainer.setAttribute('class', 'answerButton')
+        //answerContainer.setAttribute('value', questionList[index].answers[i]);
+        answerContainer.textContent = questionList[index].answers[i];
+        answersText.appendChild(answerContainer);
+    }
 }
 
 function timer() {setInterval(function() {
