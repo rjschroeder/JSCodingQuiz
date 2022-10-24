@@ -18,14 +18,14 @@ body {
 
 .quiz{
     align-items: center;
-    display: flex;
+    display: none;
     flex-direction: column;
 }
 
 .finish{
     margin: 25px;
     align-items: center;
-    display: flex;
+    display: none;
     flex-direction: column;
 }
 

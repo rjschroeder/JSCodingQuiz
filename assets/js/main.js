@@ -12,7 +12,7 @@ let finalScoreText = document.getElementById('finalScore');
 
 function startQuiz() {
     descriptionElement.style.display = 'none';
-    finishElement.style.display = 'none';
+    quizElement.style.display = 'flex';
 
     let questionIndex = questionList.length-1;
 
@@ -64,7 +64,6 @@ function checkNext(currentIndex) {
 }
 
 function endGame() {
-    descriptionElement.style.display = 'none';
     quizElement.style.display = 'none';
     finishElement.style.display = 'flex';
     clearInterval(gameTimer);
