@@ -25,15 +25,31 @@ function nextQuestion(index){
     for(let i = 0; i<questionList[index].answers.length; i++){
         let answerContainer = document.createElement('button');
         answerContainer.setAttribute('class', 'answerButton')
-        //answerContainer.setAttribute('value', questionList[index].answers[i]);
+        answerContainer.setAttribute('value', questionList[index].answers[i]);
         answerContainer.textContent = questionList[index].answers[i];
         answersText.appendChild(answerContainer);
     }
+    document.querySelectorAll('.answerButton').forEach(btn => {
+        btn.addEventListener("click", event => {
+            if (btn.value == questionList[index].correct){
+                //correct
+                console.log("correct");
+            } else {
+                console.log("incorrect");
+                time -= 15;
+                //incorrect
+            }
+        })
+    })
 }
 
 function timer() {setInterval(function() {
     time -= 1;
     timerText.textContent = "Time:" + time;
+    if (time <=0 ) {
+        //endgame
+    }
 }, 1000)}
 
 startButton.onclick = startQuiz;
+
