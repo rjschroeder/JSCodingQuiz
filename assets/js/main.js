@@ -2,6 +2,7 @@ let time = 60;
 
 let descriptionElement = document.getElementById('desc');
 let finishElement = document.getElementById('finish');
+let quizElement = document.getElementById('quiz');
 let startButton = document.getElementById('start');
 let timerText = document.getElementById('timer');
 let questionText = document.getElementById('question');
@@ -43,11 +44,20 @@ function nextQuestion(index){
     })
 }
 
+function endGame() {
+    descriptionElement.style.display = 'none';
+    quizElement.style.display = 'none';
+    finishElement.style.display = 'flex';
+}
+
 function timer() {setInterval(function() {
     time -= 1;
     timerText.textContent = "Time:" + time;
     if (time <=0 ) {
-        //endgame
+        clearInterval(timer);
+        timerText.textContent = "Time: Done!";
+        endGame();
+        
     }
 }, 1000)}
 
