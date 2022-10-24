@@ -1,4 +1,5 @@
 let time = 60;
+var gameTimer;
 
 let descriptionElement = document.getElementById('desc');
 let finishElement = document.getElementById('finish');
@@ -7,6 +8,7 @@ let startButton = document.getElementById('start');
 let timerText = document.getElementById('timer');
 let questionText = document.getElementById('question');
 let answersText = document.getElementById('answers');
+let finalScoreText = document.getElementById('finalScore');
 
 function startQuiz() {
     descriptionElement.style.display = 'none';
@@ -15,13 +17,20 @@ function startQuiz() {
     let questionIndex = questionList.length-1;
 
     timerText.textContent = "Time:" + time;
-    timer();
+    gameTimer = setInterval(() => {
+        time -= 1;
+        timerText.textContent = "Time:" + time;
+        if (time <=0 ) {
+            endGame();
+        }
+    },1000);
     nextQuestion(questionIndex);
     
 }
 
 function nextQuestion(index){
     questionText.textContent = questionList[index].question;
+    answersText.textContent = '';
     
     for(let i = 0; i<questionList[index].answers.length; i++){
         let answerContainer = document.createElement('button');
@@ -34,32 +43,41 @@ function nextQuestion(index){
         btn.addEventListener("click", event => {
             if (btn.value == questionList[index].correct){
                 //correct
+                checkNext(index);
                 console.log("correct");
             } else {
                 console.log("incorrect");
                 time -= 15;
+                checkNext(index);
                 //incorrect
             }
         })
     })
 }
 
+function checkNext(currentIndex) {
+    if (currentIndex > 0) {
+        nextQuestion(currentIndex - 1);
+    } else {
+        endGame();
+    }
+}
+
 function endGame() {
     descriptionElement.style.display = 'none';
     quizElement.style.display = 'none';
     finishElement.style.display = 'flex';
+    clearInterval(gameTimer);
+    finalScoreText.textContent = time;
 }
 
-function timer() {setInterval(function() {
+function timer() {
     time -= 1;
     timerText.textContent = "Time:" + time;
     if (time <=0 ) {
-        clearInterval(timer);
-        timerText.textContent = "Time: Done!";
         endGame();
-        
     }
-}, 1000)}
+}
 
 startButton.onclick = startQuiz;
 
