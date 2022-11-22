@@ -97,6 +97,7 @@ function leaderboardSubmit() {
             let toAdd = [score];
             window.localStorage.setItem('leaderboardData', JSON.stringify(toAdd));
         }
+        window.location.href = 'leaderboard.html';
     }
 }
 
