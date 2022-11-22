@@ -67,6 +67,7 @@ function endGame() {
     quizElement.style.display = 'none';
     finishElement.style.display = 'flex';
     clearInterval(gameTimer);
+    timerText.textContent = "Time:" + time;
     finalScoreText.textContent = time;
 }
 
