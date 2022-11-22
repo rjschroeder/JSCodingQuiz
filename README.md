@@ -21,7 +21,7 @@ WHEN the game is over
 THEN I can save my initials and score
 
 ### Description
-HERE
+This application is a browser based quiz that tests the user over mulitple different questions. The application uses HTML, CSS, and JavaScript to provide the user with a reactive web quiz. The app uitlizes a timer to calculate a score for the user, and the app also has a leaderboard, where the user can enter in their name and their high score is saved. The leaderboard can be cleared, and the multiple pages can me easily navigated.
 
 ## Screenshot
 
@@ -29,4 +29,4 @@ HERE
 
 ## Live Link
 
-[Deployed Application Here]()
+[Deployed Application Here](https://rjschroeder.github.io/JSCodingQuiz/)
