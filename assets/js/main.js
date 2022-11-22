@@ -9,6 +9,8 @@ let timerText = document.getElementById('timer');
 let questionText = document.getElementById('question');
 let answersText = document.getElementById('answers');
 let finalScoreText = document.getElementById('finalScore');
+let leaderboardName = document.getElementById('name');
+let leaderboardNameButton = document.getElementById('submitName');
 
 function startQuiz() {
     descriptionElement.style.display = 'none';
@@ -67,6 +69,7 @@ function endGame() {
     quizElement.style.display = 'none';
     finishElement.style.display = 'flex';
     clearInterval(gameTimer);
+    timerText.textContent = "Time:" + time;
     finalScoreText.textContent = time;
 }
 
@@ -78,5 +81,25 @@ function timer() {
     }
 }
 
+function leaderboardSubmit() {
+    let enteredName = leaderboardName.value.trim();
+    if (enteredName != "") {
+        let score = {
+            score: time,
+            name: enteredName,
+        };
+        let loadLeaderboard = JSON.parse(window.localStorage.getItem('leaderboardData'));
+        if (loadLeaderboard) {
+            let currentLeaderboard = loadLeaderboard;
+            currentLeaderboard.push(score);
+            window.localStorage.setItem('leaderboardData', JSON.stringify(currentLeaderboard));
+        } else {
+            let toAdd = [score];
+            window.localStorage.setItem('leaderboardData', JSON.stringify(toAdd));
+        }
+    }
+}
+
 startButton.onclick = startQuiz;
+leaderboardNameButton.onclick = leaderboardSubmit;
 
